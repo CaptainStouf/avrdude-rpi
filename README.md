@@ -6,7 +6,7 @@ the avr, we need this hack to make it just as easy.  When you wire up your atmeg
 to connect one of the digital gpio pins to the reset pin, and then you'll be able to use avrdude
 as if your serial cable actually had a dtr pin.
 
-Instructions:
+Instructions :
 -------------
 
 Copy both files into your /usr/bin directory, then rename the original avrdude to avrdude-original
@@ -18,7 +18,7 @@ and symlink avrdude-autoreset to become avrdude.
     sudo ln -s /usr/bin/avrdude-autoreset /usr/bin/avrdude
 
 Modify the autoreset script to use the pin that you wired up to the reset pin.  See the line in
-autoreset where we do "pin = 22" and change the 22 to your gpio pin number.
+autoreset where we do "pin = 23" and change the 23 to your gpio pin number.
 
 Now when you run avrdude from anywhere (including via arduino's normal UI) it will flag dtr when
 it is about to upload hex data.
